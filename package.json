@@ -1,0 +1,50 @@
+{
+  "name": "dsh-free-chat",
+  "version": "0.1.0",
+  "description": "自由会话：一个入口在专用工作区里开空白会话，随手问一句；工作区名与聊天目录可配置。 · Free chat: one-click blank session in a dedicated workspace, with a configurable name and directory.",
+  "license": "MIT",
+  "author": "Sunshow",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "chat",
+    "workspace",
+    "session"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunshow/dsh-free-chat.git"
+  },
+  "homepage": "https://github.com/Sunshow/dsh-free-chat#readme",
+  "bugs": {
+    "url": "https://github.com/Sunshow/dsh-free-chat/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}
